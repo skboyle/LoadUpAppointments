@@ -13,3 +13,158 @@
  *= require_tree .
  *= require_self
  */
+ body, h1, h2, h3, h4, h5, h6, p, ul, ol, form, input, textarea, select, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    max-width: 800px; /* Increase the width */
+    width: 100%;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    margin: 0px
+  }
+  
+  h1, h2 {
+    margin-bottom: 20px;
+    color: #444;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    align-self: flex-start;
+  }
+  
+  input[type="text"], input[type="date"], select, textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  input[type="text"]:focus, input[type="date"]:focus, select:focus, textarea:focus {
+    border-color: #7a9cfb;
+    outline: none;
+    box-shadow: 0 0 5px rgba(122, 156, 251, 0.5);
+  }
+  
+  button[type="submit"] {
+    background: #7a9cfb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+  }
+  
+  button[type="submit"]:hover {
+    background: #6884e6;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  .alert {
+    padding: 15px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+  
+  .success {
+    padding: 15px;
+    background-color: #4caf50;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+  
+  footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+  }
+  
+  .appointment-details {
+    margin-bottom: 20px;
+  }
+  
+  .appointment-details strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  select {
+    appearance: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+  }
+  
+  select:focus {
+    border-color: #7a9cfb;
+    box-shadow: 0 0 5px rgba(122, 156, 251, 0.5);
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  label.required:after {
+    content: " *";
+    color: red;
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin-bottom: 20px;
+  }
+  
+  .field-error {
+    color: red;
+    font-size: 14px;
+  }
+  
