@@ -6,11 +6,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application" %>
-    <%= javascript_pack_tag "application" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
   </head>
 
   <body>
     <%= yield %>
+    <%= javascript_pack_tag 'application', 'appointment_details', 'appointments_list', 'data-turbo-track': 'reload' %>
   </body>
 </html>
