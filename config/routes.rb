@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    root to: 'appointments#index'
+  end
+
   get 'welcome/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -8,6 +12,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'appointments#new'
-  resources :appointments, only: [:create, :new, :show, :index]
+  resources :appointments, only: [:create, :new, :show]
 
 end
