@@ -2,6 +2,10 @@
 
 LoadUp is a Ruby on Rails application that allows users to schedule appointments for pet sitting services. This application includes features such as appointment creation, viewing past and upcoming appointments, and an admin view for managing appointments.
 
+<img width="1000" alt="Screenshot 2024-07-02 at 11 11 11 PM" src="https://github.com/skboyle/LoadUpAppointments/assets/31743695/7db53503-ae2b-47b5-bee5-67a50c26018c">
+<img width="1000" alt="Screenshot 2024-07-02 at 11 10 31 PM" src="https://github.com/skboyle/LoadUpAppointments/assets/31743695/7c06bd9a-4067-4a8b-aa7d-862f1c201a20">
+<img width="1000" alt="Screenshot 2024-07-02 at 10 00 55 PM" src="https://github.com/skboyle/LoadUpAppointments/assets/31743695/bbdc527d-ae84-490b-95d4-d9b37bb6d209">
+
 ## Table of Contents
 
 - [Features](#features)
