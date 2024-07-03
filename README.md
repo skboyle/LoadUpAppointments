@@ -81,7 +81,7 @@ Open your browser and navigate to http://localhost:3000.
 - Click on an appointment to view its details.
 ### Admin View
 - Admins can access a special view to manage all appointments.
-
+- username: admin, password: admin
 
 ## Testing
 ### Running Tests
