@@ -6,8 +6,17 @@ const formatDate = (dateString) => {
   return new Date(dateString).toLocaleDateString(undefined, options);
 };
 
-const formatTime = (timeString) => {
-  return new Date(timeString).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+const formatTimeRange = (startTime, hoursRequested) => {
+  const startHour = parseInt(startTime.split(':')[0]);
+  const startMinutes = startTime.split(':')[1];
+  const endHour = startHour + parseInt(hoursRequested);
+  const formatTime = (hour, minutes) => {
+    const period = hour < 12 ? 'AM' : 'PM';
+    const formattedHour = hour % 12 === 0 ? 12 : String(hour % 12).padStart(2, '0');
+    const formattedMinutes = String(minutes).padStart(2, '0');
+    return `${formattedHour}:${minutes} ${period}`;
+  };
+  return `${formatTime(startHour, startMinutes)} - ${formatTime(endHour, startMinutes)}`;
 };
 
 const AppointmentsList = ({ appointments }) => {
@@ -21,34 +30,32 @@ const AppointmentsList = ({ appointments }) => {
       {appointments.length === 0 ? (
         <p>No {title.toLowerCase()} available.</p>
       ) : (
-        <table className="table">
+        <table className="appointments-table">
           <thead>
             <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Pet Name</th>
-              <th>Animal Type</th>
-              <th>Date of Service</th>
-              <th>Appointment Time</th>
-              <th>Hours Requested</th>
-              <th>Price</th>
-              <th>Actions</th>
+              <th><strong>Actions</strong></th>
+              <th><strong>First Name</strong></th>
+              <th><strong>Last Name</strong></th>
+              <th><strong>Pet Name</strong></th>
+              <th><strong>Animal Type</strong></th>
+              <th><strong>Hours Requested</strong></th>
+              <th><strong>Price</strong></th>
+              <th><strong>Appointment Time</strong></th>
+              <th><strong>Date of Service</strong></th>
             </tr>
           </thead>
           <tbody>
             {appointments.map((appointment) => (
               <tr key={appointment.id}>
-                <td>{appointment.first_name}</td>
-                <td>{appointment.last_name}</td>
-                <td>{appointment.pet_name}</td>
-                <td>{appointment.animal_type}</td>
-                <td>{formatDate(appointment.date_of_service)}</td>
-                <td>{formatTime(appointment.appointment_time)}</td>
-                <td>{appointment.hours_requested}</td>
-                <td>${parseFloat(appointment.price).toFixed(2)}</td>
-                <td>
-                  <a href={`/appointments/${appointment.id}`}>Show</a>
-                </td>
+                <td className="right-align"><a href={`/appointments/${appointment.id}`}>Show</a></td>
+                <td className="right-align">{appointment.first_name}</td>
+                <td className="right-align">{appointment.last_name}</td>
+                <td className="right-align">{appointment.pet_name}</td>
+                <td className="right-align">{appointment.animal_type}</td>
+                <td className="right-align">{appointment.hours_requested}</td>
+                <td className="right-align">${parseFloat(appointment.price).toFixed(2)}</td>
+                <td className="right-align">{formatTimeRange(appointment.appointment_time, appointment.hours_requested)}</td>
+                <td className="right-align">{formatDate(appointment.date_of_service)}</td>
               </tr>
             ))}
           </tbody>

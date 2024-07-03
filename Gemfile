@@ -35,6 +35,10 @@ gem "bootsnap", require: false
 # Use Faker
 gem 'faker'
 
+gem "shakapacker", "= 8.0"
+
+gem "react-rails", "= 3.2"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -60,9 +64,8 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
-gem "shakapacker", "= 8.0"
-
-gem "react-rails", "= 3.2"

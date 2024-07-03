@@ -10,7 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1>PET SITTER!</h1>
+    </header>
+    <div class="content">
+      <%= yield %>
+    </div>
     <%= javascript_pack_tag 'application', 'appointment_details', 'appointments_list', 'data-turbo-track': 'reload' %>
   </body>
 </html>
